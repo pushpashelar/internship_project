@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+          <meta charset="UTF-8">
+<head>  
+    <title>  
+    display table
+    </title>
+	   
+    </script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <script type="text/javascript" src="d1.json"></script>
+	<script type="text/javascript" src="bstable1.js"></script>
+	<link rel="stylesheet" type="text/css" href="bstable.css">
+
+</head>
+
+<body style = "text-align:center;">
+    
+	<p id = "GFG_UP" style = "font-size: 15px; font-weight: bold;">
+    </p>
+    <div id='big'>
+ <center><div id="tab" class="custom-div1"><table id="table" class="table table-dark table-striped table-hover table-bordered text-centered"></table></div></center>
+    <div id='bot'>
+    <button type="button" onclick="display()" class="btn btn-primary">getData </button>
+    Page No:<input type="text" id="tval1" size=8 name='t1'/>
+    Rows:  <input type="text" id="tval2" size=8 name='t2'/>
+    <br><br></div>
+        <div id='bot2'> 
+    <button type="button" onclick="prev()" class="btn btn-warning">Prev</button>
+    <button type="button" onclick="next()" class="btn btn-danger">Next</button>
+    goto:<input type="text" id="tval3" size=8 name='t3'/><button type="button" onclick="goto1()" class="btn btn-success">Enter</button>
+         Total pages:<input type="text" id="tval4" size=8 name='t4'/>
+
+        </div>
+        </div>
+	
+</body>
+</html>
