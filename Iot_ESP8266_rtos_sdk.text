@@ -1,0 +1,106 @@
+sudo apt-get install gcc git wget make libncurses-dev flex bison gperf python python-serial
+
+Toolchain Setup:
+
+
+
+    for 64-bit Linux:
+
+    https://dl.espressif.com/dl/xtensa-lx106-elf-linux64-1.22.0-100-ge567ec7-5.2.0.tar.gz
+
+    for 32-bit Linux:
+
+    https://dl.espressif.com/dl/xtensa-lx106-elf-linux32-1.22.0-100-ge567ec7-5.2.0.tar.gz
+
+
+
+
+    Download this file, then extract it in ~/esp directory:
+
+    mkdir -p ~/esp
+    cd ~/esp
+    tar -xzf ~/Downloads/xtensa-lx106-elf-linux64-1.22.0-100-ge567ec7-5.2.0.tar.gz
+
+    The toolchain will be extracted into ~/esp/xtensa-lx106-elf/ directory.
+
+    To use it, you will need to update your PATH environment variable in ~/.profile file. To make xtensa-lx106-elf available for all terminal sessions, add the following line to your ~/.profile file:
+
+    export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"
+
+    Alternatively, you may create an alias for the above command. This way you can get the toolchain only when you need it. To do this, add different line to your ~/.profile file:
+
+    alias get_lx106='export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"'
+
+    Then when you need the toolchain you can type get_lx106 on the command line and the toolchain will be added to your PATH
+
+
+
+Log off and log in back to make the .profile changes effective. Run the following command to verify if PATH is correctly set:
+
+printenv PATH
+
+looking for similar result containing toolchain’s path at the end of displayed string:
+
+$ printenv PATH
+/home/user-name/bin:/home/user-name/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/user-name/esp/xtense-lx106-elf/bin
+
+Instead of /home/user-name there should be a home path specific to your installation.
+
+
+ESP8266_RTOS_SDK::
+
+
+   cd ~/esp
+git clone --recursive https://github.com/espressif/ESP8266_RTOS_SDK.git
+
+Install the Required Python Packages
+
+Python packages required by ESP8266_RTOS_SDK are located in the $IDF_PATH/requirements.txt file. You can install them by running:
+
+python -m pip install --user -r $IDF_PATH/requirements.txt
+
+
+cd ~/esp
+cp -r $IDF_PATH/examples/get-started/hello_world .
+
+
+cd ~/esp/hello_world
+make menuconfig
+
+
+Build and Flash
+
+Now you can build and flash the application. Run:
+
+make flash
+
+This will compile the application and all the ESP8266_RTOS_SDK components, generate bootloader, partition table, and application binaries, and flash these binaries to your ESP8266 board.
+
+esptool.py v2.4.0
+Flashing binaries to serial port /dev/ttyUSB0 (app at offset 0x10000)...
+esptool.py v2.4.0
+Connecting....
+Chip is ESP8266EX
+Features: WiFi
+MAC: ec:fa:bc:1d:33:2d
+Uploading stub...
+Running stub...
+Stub running...
+Configuring flash size...
+Compressed 7952 bytes to 5488...
+Wrote 7952 bytes (5488 compressed) at 0x00000000 in 0.5 seconds (effective 129.9 kbit/s)...
+Hash of data verified.
+Compressed 234800 bytes to 162889...
+Wrote 234800 bytes (162889 compressed) at 0x00010000 in 14.4 seconds (effective 130.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 83...
+Wrote 3072 bytes (83 compressed) at 0x00008000 in 0.0 seconds (effective 1789.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+
+
+Monitor
+
+To see if “hello_world running, type make monitor.
