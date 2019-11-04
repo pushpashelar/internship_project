@@ -1,0 +1,9 @@
+.custom-div1{
+                  position:relative;
+                  height:500px;
+                  width:100%;
+                  float:left;
+                  overflow-x :auto;
+                  overflow-y :scroll;
+                  }
+
