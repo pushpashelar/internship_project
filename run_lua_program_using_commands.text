@@ -1,0 +1,85 @@
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool fsinfo
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Unable to establish connection 
+[NodeMCU-Tool]~ Cannot open port "(/de	v/ttyUSB0)" 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool init
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Creating project based configuration file.. 
+[NodeMCU-Tool]~ Baudrate in Bit per Seconds, e.g. 115200 (default) (115200) 9600
+[NodeMCU-Tool]~ Serial connection to use, e.g. COM1 or /dev/ttyUSB2 (/dev/ttyUSB0) /dev/ttyUSB0
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool fsinfo
+[config]      ~ Project based configuration loaded 
+[connector]   ~ Echo: print("echo1337")
+[NodeMCU-Tool]~ Unable to establish connection 
+[NodeMCU-Tool]~ No response detected - is NodeMCU online and the Lua interpreter ready ? 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ sudo chmod 777 /dev/ttyUSB0 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool init
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Creating project based configuration file.. 
+[NodeMCU-Tool]~ Baudrate in Bit per Seconds, e.g. 115200 (default) (115200) 9600
+[NodeMCU-Tool]~ Serial connection to use, e.g. COM1 or /dev/ttyUSB2 (/dev/ttyUSB0) /dev/ttyUSB0
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool fsinfo
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[device]      ~ Free Disk Space: 507 KB | Total: 507 KB | 0 Files 
+[device]      ~ No Files found - have you created the file-system? 
+[NodeMCU-Tool]~ disconnecting 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool upload hello.lua 
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[NodeMCU-Tool]~ Uploading "hello.lua" >> "hello.lua"... 
+[connector]   ~ Transfer-Mode: hex 
+[NodeMCU-Tool]~ File Transfer complete! 
+[NodeMCU-Tool]~ disconnecting 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ no
+node          node-gyp      nodejs        nodemcu-tool  nohup         nologin       notify-send   
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool run hello.lua 
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[device]      ~ Running "hello.lua" 
+[device]      ~ >-----------------------------> 
+hey nodemcu
+[device]      ~ >-----------------------------> 
+[NodeMCU-Tool]~ disconnecting 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool upload server.lua 
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[NodeMCU-Tool]~ Uploading "server.lua" >> "server.lua"... 
+[connector]   ~ Transfer-Mode: hex 
+[NodeMCU-Tool]~ File Transfer complete! 
+[NodeMCU-Tool]~ disconnecting 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool run server.lua 
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[device]      ~ Running "server.lua" 
+[device]      ~ >-----------------------------> 
+Server IP Address:	192.168.4.1	255.255.255.0	192.168.4.1
+[device]      ~ >-----------------------------> 
+[NodeMCU-Tool]~ disconnecting 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ ls
+ESPlorer  ESPlorer.zip  hello.lua  server.lua
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ sudo chmod 777 /dev/ttyUSB0 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool upload server.lua 
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[NodeMCU-Tool]~ Uploading "server.lua" >> "server.lua"... 
+[connector]   ~ Transfer-Mode: hex 
+[NodeMCU-Tool]~ File Transfer complete! 
+[NodeMCU-Tool]~ disconnecting 
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-toll run server.lua
+nodemcu-toll: command not found
+(my_env) pushpa@pushpa-Lenovo-G580:~/Downloads$ nodemcu-tool run server.lua
+[config]      ~ Project based configuration loaded 
+[NodeMCU-Tool]~ Connected 
+[device]      ~ Arch: esp8266 | Version: 0.9.6 | ChipID: 0xef0c6 | FlashID: 0x1440e0 
+[device]      ~ Running "server.lua" 
+[device]      ~ >-----------------------------> 
+Server IP Address:	192.168.4.1	255.255.255.0	192.168.4.1
+[device]      ~ >-----------------------------> 
+[NodeMCU-Tool]~ disconnecting 
